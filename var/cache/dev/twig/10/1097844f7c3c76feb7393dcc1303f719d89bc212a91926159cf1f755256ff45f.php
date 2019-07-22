@@ -66,8 +66,14 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         <link  rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\" />
         <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"assets/css/main.css\">
-        <link rel=\"stylesheet\" href=\"assets/css/main_new.css\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/main.css"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 25
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/css/main_new.css"), "html", null, true);
+        echo "\">
 
         ";
         // line 27
@@ -125,8 +131,14 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
                 </div>
             </div>
         </footer>
-        <script src=\"assets/js/materialize.js\"></script>
-        <script src=\"assets/js/main.js\"></script>
+        <script src=\"";
+        // line 77
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/materialize.js"), "html", null, true);
+        echo "\"></script>
+        <script src=\"";
+        // line 78
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
+        echo "\"></script>
         ";
         // line 79
         $this->displayBlock('javascripts', $context, $blocks);
@@ -201,9 +213,14 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  182 => 79,  164 => 56,  146 => 27,  134 => 80,  132 => 79,  108 => 57,  106 => 56,  76 => 28,  74 => 27,  46 => 1,);
+        return array (  194 => 79,  176 => 56,  158 => 27,  146 => 80,  144 => 79,  140 => 78,  136 => 77,  114 => 57,  112 => 56,  82 => 28,  80 => 27,  75 => 25,  71 => 24,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -231,8 +248,8 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         <link  rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\" />
         <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
         <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">
-        <link rel=\"stylesheet\" href=\"assets/css/main.css\">
-        <link rel=\"stylesheet\" href=\"assets/css/main_new.css\">
+        <link rel=\"stylesheet\" href=\"{{asset ('assets/css/main.css')}}\">
+        <link rel=\"stylesheet\" href=\"{{asset ('assets/css/main_new.css')}}\">
 
         {% block stylesheets %}{% endblock %}
     </head>
@@ -284,8 +301,8 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
                 </div>
             </div>
         </footer>
-        <script src=\"assets/js/materialize.js\"></script>
-        <script src=\"assets/js/main.js\"></script>
+        <script src=\"{{asset ('assets/js/materialize.js')}}\"></script>
+        <script src=\"{{asset ('assets/js/main.js')}}\"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
