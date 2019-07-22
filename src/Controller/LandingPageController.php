@@ -2,13 +2,15 @@
 
 namespace App\Controller;
 
+use App\Entity\Order;
+use App\Entity\Product;
 use App\Form\OrderType;
 use App\Manager\OrderManager;
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class LandingPageController extends Controller
 {
@@ -18,10 +20,19 @@ class LandingPageController extends Controller
      */
     public function index(Request $request)
     {
-        //Your code here
+        $repository = $this->getDoctrine()->getRepository(Product::class);
+        $products = $repository->findAll();
+
+
+        //form order instantiation
+        $order = new Order();
+        $formOrder = $this->createForm(OrderType::class, $order);
+
 
         return $this->render('landing_page/index_new.html.twig', [
 
+            'formOrder' => $formOrder->createView(),
+            'products' => $products,
         ]);
     }
     /**
@@ -29,8 +40,6 @@ class LandingPageController extends Controller
      */
     public function confirmation()
     {
-        return $this->render('landing_page/confirmation.html.twig', [
-
-        ]);
+        return $this->render('landing_page/confirmation.html.twig', []);
     }
 }

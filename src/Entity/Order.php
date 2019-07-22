@@ -57,11 +57,6 @@ class Order
     private $statut;
 
     /**
-     * @ORM\Column(type="integer")
-     */
-    private $client_id;
-
-    /**
      * @ORM\OneToOne(targetEntity="App\Entity\Product", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
@@ -170,18 +165,6 @@ class Order
     public function setStatut(string $statut): self
     {
         $this->statut = $statut;
-
-        return $this;
-    }
-
-    public function getClientId(): ?int
-    {
-        return $this->client_id;
-    }
-
-    public function setClientId(int $client_id): self
-    {
-        $this->client_id = $client_id;
 
         return $this;
     }
