@@ -3,7 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-
+use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
  */
@@ -19,7 +19,7 @@ class Client
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $fistname;
+    private $firstname;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -33,6 +33,7 @@ class Client
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\Positive
      */
     private $email;
 
@@ -53,11 +54,15 @@ class Client
 
     /**
      * @ORM\Column(type="integer")
+     * @Assert\Positive
      */
     private $zipCode;
 
     /**
+     * 
      * @ORM\Column(type="string", length=255)
+     * @Assert\Positive
+     * 
      */
     private $country;
 
@@ -72,14 +77,14 @@ class Client
         return $this->id;
     }
 
-    public function getFistname(): ?string
+    public function getFirstname(): ?string
     {
-        return $this->fistname;
+        return $this->firstname;
     }
 
-    public function setFistname(string $fistname): self
+    public function setFirstname(string $firstname): self
     {
-        $this->fistname = $fistname;
+        $this->firstname = $firstname;
 
         return $this;
     }

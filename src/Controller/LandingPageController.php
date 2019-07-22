@@ -26,12 +26,12 @@ class LandingPageController extends Controller
 
         //form order instantiation
         $order = new Order();
-        $formOrder = $this->createForm(OrderType::class, $order);
+        $form = $this->createForm(OrderType::class, $order);
 
 
         return $this->render('landing_page/index_new.html.twig', [
 
-            'formOrder' => $formOrder->createView(),
+            'form' => $form->createView(),
             'products' => $products,
         ]);
     }

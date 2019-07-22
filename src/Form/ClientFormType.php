@@ -2,36 +2,39 @@
 
 namespace App\Form;
 
-use App\Entity\Order;
+use App\Entity\Client;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class OrderType extends AbstractType
+class ClientFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('addressOrder')
-            ->add('addressComplementOrder')
-            ->add('cityOrder')
-            ->add('zipCodeOrder')
-            ->add('countryOrder', ChoiceType::class, [
+            ->add('firstname')
+            ->add('lastname')
+            ->add('phone')
+            ->add('email')
+            ->add('address')
+            ->add('addressComplement')
+            ->add('city')
+            ->add('zipCode')
+            ->add('country', ChoiceType::class, [
                 'choices' => [
                     'France' => 'france',
                     'Belgique' => 'belgique',
                     'Luxembourg' => 'luxembourg',
                 ],
             ])
-            ->add ('client', ClientFormType::class )
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults([
-            'data_class' => Order::class,
+            'data_class' => Client::class,
         ]);
     }
 }
