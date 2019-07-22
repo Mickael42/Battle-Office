@@ -1828,6 +1828,6 @@ class __TwigTemplate_65d9bdbc8d8127a89194a05ee23c1eac1d7a1c2ccde751d270d89297369
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/shared/httpd/Battle-Office/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

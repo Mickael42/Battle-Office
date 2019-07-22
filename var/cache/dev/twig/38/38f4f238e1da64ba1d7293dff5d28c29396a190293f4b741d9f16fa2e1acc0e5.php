@@ -482,6 +482,6 @@ class __TwigTemplate_62e5b5a2ab8ac8028d1434acb578cf63247e6853de9a3053acadbe13b7b
         {% endfor %}
     </table>
 {% endmacro %}
-", "@WebProfiler/Collector/events.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
+", "@WebProfiler/Collector/events.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Collector/events.html.twig");
     }
 }

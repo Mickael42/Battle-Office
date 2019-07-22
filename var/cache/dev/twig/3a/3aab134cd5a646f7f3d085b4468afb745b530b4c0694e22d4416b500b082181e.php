@@ -155,6 +155,6 @@ class __TwigTemplate_d97d80adabcbcdf338522d15f59efd3cc7f2657396b92ff95e6865ac387
 {% block panel %}
     {{ render(path('_profiler_router', { token: token })) }}
 {% endblock %}
-", "@WebProfiler/Collector/router.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
+", "@WebProfiler/Collector/router.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Collector/router.html.twig");
     }
 }

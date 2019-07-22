@@ -204,6 +204,6 @@ class __TwigTemplate_e865dde301687d485909b53f28e460a9dc092172859a8539f0f5bf12b88
         })|raw }}
     </div>
 {% endif %}
-", "@Twig/Exception/trace.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
+", "@Twig/Exception/trace.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/twig-bundle/Resources/views/Exception/trace.html.twig");
     }
 }

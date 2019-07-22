@@ -1006,6 +1006,6 @@ class __TwigTemplate_8cbeea8d199c59f6ddc854016e213d1673b244f63d92d4ee76034974012
         {% endif %}
     {% endfor %}
 {% endblock %}
-", "@Swiftmailer/Collector/swiftmailer.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
+", "@Swiftmailer/Collector/swiftmailer.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/swiftmailer-bundle/Resources/views/Collector/swiftmailer.html.twig");
     }
 }

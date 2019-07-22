@@ -642,6 +642,6 @@ class __TwigTemplate_33d19ff763fb0b6ca600800d3715f5b3ecbc1203bf239448e8bb5c5fd43
         }());
     </script>
 {% endblock %}
-", "@WebProfiler/Profiler/layout.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
+", "@WebProfiler/Profiler/layout.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/layout.html.twig");
     }
 }

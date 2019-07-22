@@ -1175,6 +1175,6 @@ class __TwigTemplate_9ba16d9782f1cd08cbf41fedcba7a34b8819b5d1b6e963f9bb4e494020a
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

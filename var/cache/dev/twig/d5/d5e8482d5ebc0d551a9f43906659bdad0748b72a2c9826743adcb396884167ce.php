@@ -227,6 +227,6 @@ class __TwigTemplate_d88f7f33eaddcb8ba6e2c54cf547f8cc6367e267d852fe5f3f49adefa93
         {{ include('@Twig/base_js.html.twig') }}
     </body>
 </html>
-", "@Twig/layout.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
+", "@Twig/layout.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/twig-bundle/Resources/views/layout.html.twig");
     }
 }

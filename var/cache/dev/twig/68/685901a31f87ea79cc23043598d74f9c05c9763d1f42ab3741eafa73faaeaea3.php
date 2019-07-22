@@ -189,6 +189,6 @@ class __TwigTemplate_e28408e0370a176916d869c850494ea1f9c3e6c7db0e798606a1965d460
         </div>
     </div>
 </div>
-", "@Twig/Exception/traces.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
+", "@Twig/Exception/traces.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/twig-bundle/Resources/views/Exception/traces.html.twig");
     }
 }

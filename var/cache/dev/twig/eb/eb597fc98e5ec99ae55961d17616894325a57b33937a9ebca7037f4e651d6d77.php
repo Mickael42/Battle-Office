@@ -164,6 +164,6 @@ class __TwigTemplate_6c9817b438f29bf0974040d298750a3fa2c6a9d3b728c4a76c31fd0ddab
         {% block body '' %}
     </body>
 </html>
-", "@WebProfiler/Profiler/base.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
+", "@WebProfiler/Profiler/base.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/base.html.twig");
     }
 }

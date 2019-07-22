@@ -909,6 +909,6 @@ class __TwigTemplate_cdc903a7f4e95ba91be23e2a13ded9831ea346a5a9637a9979350271388
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/home/micka/devilbox/data/www/projet-symfony/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/shared/httpd/Battle-Office/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }
