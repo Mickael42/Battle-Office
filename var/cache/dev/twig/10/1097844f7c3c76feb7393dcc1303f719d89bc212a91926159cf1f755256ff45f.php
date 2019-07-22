@@ -27,7 +27,6 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         $this->parent = false;
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'stylesheets' => [$this, 'block_stylesheets'],
             'body' => [$this, 'block_body'],
             'javascripts' => [$this, 'block_javascripts'],
@@ -47,24 +46,91 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         echo "<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>";
-        // line 5
-        $this->displayBlock('title', $context, $blocks);
-        echo "</title>
+        <meta charset=\"utf-8\">
+        <title>BattleOffice, petites guerres entre amis - Vente privée de jouets Nerfs Elite</title>
+        <meta name=\"description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta name=\"image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\">
+        <meta itemprop=\"name\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta itemprop=\"description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta itemprop=\"image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\">
+        <meta name=\"og:title\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta name=\"og:description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta name=\"og:url\" content=\"https://curcuma-citron.feelwellshop.com/\">
+        <meta name=\"og:site_name\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta name=\"og:locale\" content=\"fr_FR\">
+        <meta name=\"og:type\" content=\"product\">
+        <meta name=\"product:availability\" content=\"en stock\">
+        <meta name=\"product:price:currency\" content=\"EUR\">
+        <meta name=\"product:brand\" content=\"FeelWeelShop\">
+        <meta name=\"twitter:image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\" />
+        <link  rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\" />
+        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"assets/css/main.css\">
+        <link rel=\"stylesheet\" href=\"assets/css/main_new.css\">
+
         ";
-        // line 6
+        // line 27
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 7
+        // line 28
         echo "    </head>
     <body>
-        ";
-        // line 9
+        <div class=\"navbar\">
+            <nav class=\"white\">
+                <div class=\"nav-wrapper\">
+                    <div class=\"row\">
+                        <div class=\"col s12 m6\">
+                            <a href=\"/\" class=\"brand-logo\">BattleOffice</a>
+                        </div>
+                        <div class=\"col s12 m6\">
+                            <div class=\"picto-nav\">
+                                <i class=\"fas fa-shipping-fast\"></i>
+                                <span>Livraison gratuite</span>
+                                Pour toute commande !
+                            </div>
+                            <div class=\"picto-nav\">
+                                <i class=\"fas fa-grin\"></i>
+                                <span>Garantie 100% Satisfait</span>
+                                Ou remboursé !
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <main class=\"page\">
+            ";
+        // line 56
         $this->displayBlock('body', $context, $blocks);
-        // line 10
-        echo "        ";
+        // line 57
+        echo "        </main>
+
+        <footer class=\"page-footer white\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col s12\">
+                        <h5 class=\"color_brand_primary center-align\">POUR VOTRE SANTÉ, PRATIQUEZ UNE ACTIVITÉ PHYSIQUE RÉGULIÈRE - WWW.MANGERBOUGER.FR</h5>
+                        <p class=\"color_brand_primary center-align\">
+                            BattleOffice ne garantit pas la paix dans les bureaux et open-spaces. Il est déconseillé d'utiliser nos produits dans des espaces publiques. Ne déclenchez pas de guerres que vous regretteriez.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class=\"footer-copyright\">
+                <div class=\"container color_brand_primary\">
+                    © 2019 Tous droits réservés battleoffice
+                    <a class=\"color_brand_primary right\" href=\"#\" target=\"_blank\">Conditions Générales de Vente</a>
+                </div>
+            </div>
+        </footer>
+        <script src=\"assets/js/materialize.js\"></script>
+        <script src=\"assets/js/main.js\"></script>
+        ";
+        // line 79
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 11
+        // line 80
         echo "    </body>
 </html>
 ";
@@ -76,26 +142,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 5
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Welcome!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 6
+    // line 27
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -113,7 +160,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 9
+    // line 56
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -131,7 +178,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 10
+    // line 79
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +203,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     public function getDebugInfo()
     {
-        return array (  135 => 10,  117 => 9,  99 => 6,  80 => 5,  68 => 11,  65 => 10,  63 => 9,  59 => 7,  57 => 6,  53 => 5,  47 => 1,);
+        return array (  182 => 79,  164 => 56,  146 => 27,  134 => 80,  132 => 79,  108 => 57,  106 => 56,  76 => 28,  74 => 27,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -164,15 +211,84 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
         return new Source("<!DOCTYPE html>
 <html>
     <head>
-        <meta charset=\"UTF-8\">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta charset=\"utf-8\">
+        <title>BattleOffice, petites guerres entre amis - Vente privée de jouets Nerfs Elite</title>
+        <meta name=\"description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta name=\"image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\">
+        <meta itemprop=\"name\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta itemprop=\"description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta itemprop=\"image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\">
+        <meta name=\"og:title\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta name=\"og:description\" content=\"Avec la cure Curcuma Citron 100% naturel, détoxifiez votre corps et maintenez un poids idéal avec une jolie silhouette.\">
+        <meta name=\"og:url\" content=\"https://curcuma-citron.feelwellshop.com/\">
+        <meta name=\"og:site_name\" content=\"Cure Curcuma Citron, amaigrissant 100% naturel qui vous aide à perdre du poids et favorise la detox | FeelWellShop\">
+        <meta name=\"og:locale\" content=\"fr_FR\">
+        <meta name=\"og:type\" content=\"product\">
+        <meta name=\"product:availability\" content=\"en stock\">
+        <meta name=\"product:price:currency\" content=\"EUR\">
+        <meta name=\"product:brand\" content=\"FeelWeelShop\">
+        <meta name=\"twitter:image\" content=\"https://curcuma-citron.feelwellshop.com/assets/images/cure_30g.jpg\" />
+        <link  rel=\"icon\" type=\"image/x-icon\" href=\"favicon.png\" />
+        <link href=\"https://fonts.googleapis.com/icon?family=Material+Icons\" rel=\"stylesheet\">
+        <link rel=\"stylesheet\" href=\"https://use.fontawesome.com/releases/v5.5.0/css/all.css\" integrity=\"sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU\" crossorigin=\"anonymous\">
+        <link rel=\"stylesheet\" href=\"assets/css/main.css\">
+        <link rel=\"stylesheet\" href=\"assets/css/main_new.css\">
+
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class=\"navbar\">
+            <nav class=\"white\">
+                <div class=\"nav-wrapper\">
+                    <div class=\"row\">
+                        <div class=\"col s12 m6\">
+                            <a href=\"/\" class=\"brand-logo\">BattleOffice</a>
+                        </div>
+                        <div class=\"col s12 m6\">
+                            <div class=\"picto-nav\">
+                                <i class=\"fas fa-shipping-fast\"></i>
+                                <span>Livraison gratuite</span>
+                                Pour toute commande !
+                            </div>
+                            <div class=\"picto-nav\">
+                                <i class=\"fas fa-grin\"></i>
+                                <span>Garantie 100% Satisfait</span>
+                                Ou remboursé !
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </nav>
+        </div>
+
+        <main class=\"page\">
+            {% block body %}{% endblock %}
+        </main>
+
+        <footer class=\"page-footer white\">
+            <div class=\"container\">
+                <div class=\"row\">
+                    <div class=\"col s12\">
+                        <h5 class=\"color_brand_primary center-align\">POUR VOTRE SANTÉ, PRATIQUEZ UNE ACTIVITÉ PHYSIQUE RÉGULIÈRE - WWW.MANGERBOUGER.FR</h5>
+                        <p class=\"color_brand_primary center-align\">
+                            BattleOffice ne garantit pas la paix dans les bureaux et open-spaces. Il est déconseillé d'utiliser nos produits dans des espaces publiques. Ne déclenchez pas de guerres que vous regretteriez.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class=\"footer-copyright\">
+                <div class=\"container color_brand_primary\">
+                    © 2019 Tous droits réservés battleoffice
+                    <a class=\"color_brand_primary right\" href=\"#\" target=\"_blank\">Conditions Générales de Vente</a>
+                </div>
+            </div>
+        </footer>
+        <script src=\"assets/js/materialize.js\"></script>
+        <script src=\"assets/js/main.js\"></script>
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "/home/micka/devilbox/data/www/projet-symfony/templates/base.html.twig");
+", "base.html.twig", "/shared/httpd/Battle-Office/templates/base.html.twig");
     }
 }
