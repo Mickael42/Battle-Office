@@ -36,7 +36,7 @@
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.zipCode, {attr :{min : '0'}})}}
+                {{form_row (form.client.zipCode, {attr :{min : '0' , maxlength: "5" }}) }}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
@@ -44,7 +44,7 @@
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.phone)}}
+                {{form_row (form.client.phone, {attr :{min : '0' , maxlength: "10" }})}}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
@@ -86,7 +86,7 @@
                     <div class="form-error"></div>
                 </div>
                 <div class="input-field">
-                   {{form_row (form.zipCodeOrder)}}
+                   {{form_row (form.zipCodeOrder, {attr :{min : '0' , maxlength: "5" }}) }}
                     <div class="form-error"></div>
                 </div>
                 <div class="input-field">

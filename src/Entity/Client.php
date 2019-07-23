@@ -32,8 +32,10 @@ class Client
     private $phone;
 
     /**
+     * 
      * @ORM\Column(type="string", length=255)
      * @Assert\Positive
+     * @Assert\length( min = 10, max = 10)
      */
     private $email;
 
@@ -62,6 +64,7 @@ class Client
      * 
      * @ORM\Column(type="string", length=255)
      * @Assert\Positive
+     * @Assert\length( min = 5, max = 5)
      * 
      */
     private $country;
