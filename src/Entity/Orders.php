@@ -59,7 +59,7 @@ class Orders
     private $statut;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Product", cascade={"persist", "remove"})
+     * @ORM\ManyToOne(targetEntity="App\Entity\Product", cascade={"persist", "remove"})
      * @ORM\JoinColumn(nullable=false)
      */
     private $product;
