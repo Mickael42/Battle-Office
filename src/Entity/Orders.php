@@ -8,7 +8,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrderRepository")
  */
-class Order
+class Orders
 {
     /**
      * @ORM\Id()
@@ -44,7 +44,7 @@ class Order
 
     /**
      * @ORM\Column(type="integer", nullable=true)
-     * @Assert\Length( min = 5, max = 5)
+     * 
      */
     private $zipCodeOrder;
 

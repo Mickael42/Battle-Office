@@ -27,15 +27,15 @@ class Client
     private $lastname;
 
     /**
-     * @ORM\Column(type="integer")
+     * @ORM\Column(type="string", length=255)
+     * @Assert\Positive
      */
     private $phone;
 
     /**
      * 
      * @ORM\Column(type="string", length=255)
-     * @Assert\Positive
-     * @Assert\length( min = 10, max = 10)
+   
      */
     private $email;
 
@@ -45,12 +45,12 @@ class Client
     private $address;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $addressComplement;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
+     * @ORM\Column(type="string", length=255)
      */
     private $city;
 
@@ -63,17 +63,11 @@ class Client
     /**
      * 
      * @ORM\Column(type="string", length=255)
-     * @Assert\Positive
-     * @Assert\length( min = 5, max = 5)
      * 
      */
     private $country;
 
-    /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Order", cascade={"persist", "remove"})
-     * @ORM\JoinColumn(nullable=false)
-     */
-    private $order_id;
+
 
     public function getId(): ?int
     {
@@ -104,12 +98,12 @@ class Client
         return $this;
     }
 
-    public function getPhone(): ?int
+    public function getPhone(): ?string
     {
         return $this->phone;
     }
 
-    public function setPhone(int $phone): self
+    public function setPhone(string $phone): self
     {
         $this->phone = $phone;
 
@@ -184,17 +178,6 @@ class Client
     public function setCountry(string $country): self
     {
         $this->country = $country;
-
-        return $this;
-    }
-    public function getOrderId(): ?Order
-    {
-        return $this->order_id;
-    }
-
-    public function setOrderId(Order $order_id): self
-    {
-        $this->order_id = $order_id;
 
         return $this;
     }
