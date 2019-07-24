@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ClientRepository")
  */
@@ -33,9 +34,7 @@ class Client
     private $phone;
 
     /**
-     * 
      * @ORM\Column(type="string", length=255)
-   
      */
     private $email;
 
@@ -61,13 +60,9 @@ class Client
     private $zipCode;
 
     /**
-     * 
      * @ORM\Column(type="string", length=255)
-     * 
      */
     private $country;
-
-
 
     public function getId(): ?int
     {
