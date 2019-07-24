@@ -70,6 +70,11 @@ class Orders
      */
     private $client;
 
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $orderApiId;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -191,6 +196,18 @@ class Orders
     public function setClient(Client $client): self
     {
         $this->client = $client;
+
+        return $this;
+    }
+
+    public function getOrderApiId(): ?int
+    {
+        return $this->orderApiId;
+    }
+
+    public function setOrderApiId(?int $orderApiId): self
+    {
+        $this->orderApiId = $orderApiId;
 
         return $this;
     }

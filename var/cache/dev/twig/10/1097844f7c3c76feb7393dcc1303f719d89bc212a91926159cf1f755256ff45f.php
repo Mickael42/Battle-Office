@@ -131,18 +131,19 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
                 </div>
             </div>
         </footer>
+        <script src=\"https://js.stripe.com/v3/\"></script>
         <script src=\"";
-        // line 77
+        // line 78
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/materialize.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 78
+        // line 79
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("assets/js/main.js"), "html", null, true);
         echo "\"></script>
         ";
-        // line 79
-        $this->displayBlock('javascripts', $context, $blocks);
         // line 80
+        $this->displayBlock('javascripts', $context, $blocks);
+        // line 81
         echo "    </body>
 </html>
 ";
@@ -190,7 +191,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     }
 
-    // line 79
+    // line 80
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -220,7 +221,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
 
     public function getDebugInfo()
     {
-        return array (  194 => 79,  176 => 56,  158 => 27,  146 => 80,  144 => 79,  140 => 78,  136 => 77,  114 => 57,  112 => 56,  82 => 28,  80 => 27,  75 => 25,  71 => 24,  46 => 1,);
+        return array (  195 => 80,  177 => 56,  159 => 27,  147 => 81,  145 => 80,  141 => 79,  137 => 78,  114 => 57,  112 => 56,  82 => 28,  80 => 27,  75 => 25,  71 => 24,  46 => 1,);
     }
 
     public function getSourceContext()
@@ -301,6 +302,7 @@ class __TwigTemplate_bba37f563a5e776d38bf009e5eb5758fe244c8d7e87958a2d3f9274361d
                 </div>
             </div>
         </footer>
+        <script src=\"https://js.stripe.com/v3/\"></script>
         <script src=\"{{asset ('assets/js/materialize.js')}}\"></script>
         <script src=\"{{asset ('assets/js/main.js')}}\"></script>
         {% block javascripts %}{% endblock %}
