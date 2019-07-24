@@ -16,39 +16,66 @@
         <p class="h6 center-align">Remplissez ce formulaire</p>
         <div class="form-wrapper">
             <div class="input-field">
-                {{form_row (form.client.firstname)}}
+                {{ form_label(form.client.firstname, 'Prénom') }}
+                {{ form_errors(form.client.firstname) }}
+                {{ form_widget(form.client.firstname, {attr :{min : '2'}}) }}
+                {# {{form_row (form.client.firstname) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.lastname)}}
+                {{ form_label(form.client.lastname, 'Nom') }}
+                {{ form_errors(form.client.lastname) }}
+                {{ form_widget(form.client.lastname, {attr :{min : '2'}}) }}
+                {# {{form_row (form.client.lastname, {attr :{min : '2'}}) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.address)}}
+                {{ form_label(form.client.address, 'Adresse') }}
+                {{ form_errors(form.client.address) }}
+                {{ form_widget(form.client.address, {attr :{min : '2'}}) }}
+                {# {{form_row (form.client.address, {attr :{min : '2'}}) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.addressComplement)}}
+                {{ form_label(form.client.addressComplement, 'Complément d\'adresse') }}
+                {{ form_errors(form.client.addressComplement) }}
+                {{ form_widget(form.client.addressComplement, {attr :{min : '2'}}) }}
+                {# {{form_row (form.client.addressComplement, {attr :{min : '2'}}) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.city)}}
+                {{ form_label(form.client.city, 'Ville') }}
+                {{ form_errors(form.client.city) }}
+                {{ form_widget(form.client.city ,{attr :{min : '2'}}) }}
+                {# {{form_row (form.client.city, {attr :{min : '2'}}) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.zipCode, {attr :{min : '0' , maxlength: "5" }}) }}
+                {{ form_label(form.client.zipCode, 'Code postale') }}
+                {{ form_errors(form.client.zipCode) }}
+                {{ form_widget(form.client.zipCode, {attr :{min : '1' , maxlength: "5" }}) }}
+                {# {{form_row (form.client.zipCode, {attr :{min : '0' , maxlength: "5" }}) }} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.country)}}
+                {{ form_label(form.client.country, 'Pays') }}
+                {{ form_errors(form.client.country) }}
+                {{ form_widget(form.client.country) }}
+                {# {{form_row (form.client.country)}} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.phone, {attr :{min : '0' , maxlength: "10" }})}}
+                {{ form_label(form.client.phone, 'Téléphone') }}
+                {{ form_errors(form.client.phone) }}
+                {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
+                {# {{form_row (form.client.phone, {attr :{min : '0' , maxlength: "10" }})}} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{form_row (form.client.email)}}
+                {{ form_label(form.client.email, 'Email') }}
+                {{ form_errors(form.client.email) }}
+                {{ form_widget(form.client.email) }}
+                {# {{form_row (form.client.email)}} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
@@ -74,75 +101,80 @@
                     <div class="form-error"></div>
                 </div>
                 <div class="input-field">
-                    {{form_row (form.addressOrder)}}
+                {{ form_label(form.addressOrder, 'Adresse') }}
+                {{ form_errors(form.addressOrder) }}
+                {{ form_widget(form.addressOrder, {attr :{min : '2' }}) }}
+                    {# {{form_row (form.addressOrder)}} #}
                     <div class="form-error"></div>
                 </div>
                 <div class="input-field">
-                    {{form_row (form.addressComplementOrder)}}
-                    <div class="form-error"></div>
+                {{ form_label(form.addressComplementOrder, 'Complément d\'adresse') }}
+                {{ form_errors(form.addressComplementOrder) }}
+                {{ form_widget(form.addressComplementOrder, {attr :{min : '2' }}) }}
+                {# {{form_row (form.addressComplementOrder)}} #}
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.cityOrder, 'Ville') }}
+                {{ form_errors(form.cityOrder) }}
+                {{ form_widget(form.cityOrder, {attr :{min : '2' }}) }}
+                {# {{form_row (form.cityOrder)}} #}
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.zipCodeOrder, 'Code postale') }}
+                {{ form_errors(form.zipCodeOrder) }}
+                {{ form_widget(form.zipCodeOrder, {attr :{min : '0' , maxlength: "5" }}) }}
+                {# {{form_row (form.zipCodeOrder) }} #}
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                {{ form_label(form.countryOrder, 'Pays') }}
+                {{ form_errors(form.countryOrder) }}
+                {{ form_widget(form.countryOrder) }}
+                {# {{form_row (form.countryOrder)}} #}
+                <div class="form-error"></div>
+            </div>
+            <div class="input-field">
+                <input type="text">
+                <label>Téléphone</label>
+                <div class="form-error"></div>
+            </div>
+        </div>
+    </li>
+</ul></div>{# Etape 3 #}<div class="card step_3">
+<div class="card-content">
+    <span class="card-title color_product_primary center-align">Étape 3</span>
+    <p class="h6 center-align">Choisissez un paiement</p>
+    <ul class="collapsible">
+        <li class="active">
+            <div class="collapsible-header">
+                <i class="fas fa-credit-card"></i>Payer avec la Carte Bancaire</div>
+            <div class="collapsible-body card-form">
+                <div class="row">
+                    <div class="center-align">
+                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lpmonetico">Continuer</button>
+                        <p>J'accepte les
+                            <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
+                        </p>
+                        <img alt="Stripe protège vos achats" class="responsive-img monetico" src="assets/images/paiement-securise-stripe.jpeg">
+                    </div>
                 </div>
-                <div class="input-field">
-                    {{form_row (form.cityOrder)}}
-                    <div class="form-error"></div>
-                </div>
-                <div class="input-field">
-                    {{form_row (form.zipCodeOrder) }}
-                    <div class="form-error"></div>
-                </div>
-                <div class="input-field">
-                    {{form_row (form.countryOrder)}}
-                    <div class="form-error"></div>
-                </div>
-                <div class="input-field">
-                    <input type="text">
-                    <label>Téléphone</label>
-                    <div class="form-error"></div>
+            </div>
+        </li>
+        <li>
+            <div class="collapsible-header">
+                <i class="fab fa-cc-paypal"></i>Payer avec Paypal</div>
+            <div class="collapsible-body">
+                <div class="row">
+                    <div class="center-align">
+                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lppaypal">Continuer sur PayPal</button>
+                        <p>J'accepte les
+                            <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
+                        </p>
+                    </div>
                 </div>
             </div>
         </li>
     </ul>
-</div>
-{# Etape 3 #}
-<div class="card step_3">
-    <div class="card-content">
-        <span class="card-title color_product_primary center-align">Étape 3</span>
-        <p class="h6 center-align">Choisissez un paiement</p>
-        <ul class="collapsible">
-            <li class="active">
-                <div class="collapsible-header">
-                    <i class="fas fa-credit-card"></i>Payer avec la Carte Bancaire</div>
-                <div class="collapsible-body card-form">
-                    <div class="row">
-                        <div class="center-align">
-                            <div
-                                id="card-element"><!-- A Stripe Element will be inserted here. -->
-                                
-                            </div>
-                            <div id="card-errors" role="alert"></div>
-                            
-                            <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lpmonetico">Continuer</button>
-                            <p>J'accepte les
-                                <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
-                            </p>
-                            <img alt="Stripe protège vos achats" class="responsive-img monetico" src="assets/images/paiement-securise-stripe.jpeg">
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="collapsible-header">
-                    <i class="fab fa-cc-paypal"></i>Payer avec Paypal</div>
-                <div class="collapsible-body">
-                    <div class="row">
-                        <div class="center-align">
-                            <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lppaypal">Continuer sur PayPal</button>
-                            <p>J'accepte les
-                                <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</div>
+</div></div>
