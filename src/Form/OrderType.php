@@ -14,10 +14,10 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('addressOrder')
-            ->add('addressComplementOrder')
-            ->add('cityOrder')
-            ->add('zipCodeOrder', TextType::class)
+            ->add('addressOrder', null, ['required' => false])
+            ->add('addressComplementOrder', null, ['required' => false])
+            ->add('cityOrder', null, ['required' => false])
+            ->add('zipCodeOrder', TextType::class, ['required' => false])
             ->add('countryOrder', ChoiceType::class, [
                 'choices' => [
                     '  ' => ' ---',
@@ -25,7 +25,7 @@ class OrderType extends AbstractType
                     'Belgique' => 'belgique',
                     'Luxembourg' => 'luxembourg',
                 ],
-            ])
+            ], ['required' => false])
             ->add('client', ClientFormType::class)
         ;
     }

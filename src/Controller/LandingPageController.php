@@ -149,7 +149,7 @@ class LandingPageController extends Controller
     \Stripe\Stripe::setApiKey('sk_test_DgvPJmAQjodeTkrNKaWvdqGq005l2TAOTD');
 
     $customer = Customer::create(array([
-      "name" => $order->getClient()->getLastname() ,
+      "name" => $order->getClient()->getLastname(),
       "email" => $order->getClient()->getEmail(),
       "source" => $tokenStripe,
     ]));
@@ -161,6 +161,26 @@ class LandingPageController extends Controller
       'receipt_email' => $order->getClient()->getEmail(),
       "customer" => $customer->id,
     ]);
+
+    $client = new Client([
+      // Base URI is used with relative requests
+      'base_uri' => 'https://api-commerce.simplon-roanne.com/',
+      // You can set any number of default request options.
+      'timeout'  => 2.0,
+      'headers' => ['Authorization' => 'Bearer mJxTXVXMfRzLg6ZdhUhM4F6Eutcm1ZiPk4fNmvBMxyNR4ciRsc8v0hOmlzA0vTaX'],
+
+    ]);
+
+    $response = $client->request('POST', '/order/'. $apiId .'/status', [
+      'json' => [
+        [
+          "status" => "PAID"
+        ]
+      ]
+
+    ]);
+
+    dd($response->getBody()->getContents());
 
 
     return $this->render('landing_page/confirmation.html.twig', []);
