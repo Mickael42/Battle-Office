@@ -58,11 +58,12 @@
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{ form_label(form.client.country, 'Pays') }}
                 {{ form_errors(form.client.country) }}
                 {{ form_widget(form.client.country) }}
+                {{ form_label(form.client.country, 'Pays') }}
                 {# {{form_row (form.client.country)}} #}
                 <div class="form-error"></div>
+            </select>
             </div>
             <div class="input-field">
                 {{ form_label(form.client.phone, 'Téléphone') }}
@@ -72,15 +73,14 @@
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{ form_label(form.client.email, 'Email') }}
                 {{ form_errors(form.client.email) }}
                 {{ form_widget(form.client.email) }}
                 {# {{form_row (form.client.email)}} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                <input type="text">
-                <label>Confirmation email</label>
+                {{ form_errors(form.client.email) }}
+                {{ form_widget(form.client.email) }}
                 <div class="form-error"></div>
             </div>
         </div>
@@ -129,14 +129,14 @@
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                {{ form_label(form.countryOrder, 'Pays') }}
                 {{ form_errors(form.countryOrder) }}
                 {{ form_widget(form.countryOrder) }}
+                {{ form_label(form.countryOrder, 'pays') }}
                 {# {{form_row (form.countryOrder)}} #}
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
-                <input type="text">
+                <input type="text"name="Téléphone" maxlength="10" size="10">
                 <label>Téléphone</label>
                 <div class="form-error"></div>
             </div>
@@ -154,7 +154,8 @@
                 <div class="row">
                     <div class="center-align">
                         <div
-                            id="card-element"><!-- A Stripe Element will be inserted here. -->
+                            id="card-element">
+                            <!-- A Stripe Element will be inserted here. -->
 
                         </div>
                         <div id="card-errors" role="alert"></div>

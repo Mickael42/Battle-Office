@@ -20,13 +20,13 @@ class OrderType extends AbstractType
             ->add('zipCodeOrder', TextType::class, ['required' => false])
             ->add('countryOrder', ChoiceType::class, [
                 'choices' => [
-                    '  ' => ' ---',
                     'France' => 'france',
                     'Belgique' => 'belgique',
                     'Luxembourg' => 'luxembourg',
                 ],
             ], ['required' => false])
             ->add('client', ClientFormType::class)
+
         ;
     }
 
