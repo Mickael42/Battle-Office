@@ -18,6 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 
 
+
 class LandingPageController extends Controller
 {
   /**
@@ -52,9 +53,9 @@ class LandingPageController extends Controller
       //set the payement method and the statut
 
       if ($request->request->get('stripeToken')) {
-        $order->setPaymentMethod('lpmonetico');
+        $order->setPaymentMethod('stripe');
       } else {
-        $order->setPaymentMethod('lppaypal');
+        $order->setPaymentMethod('paypal');
       };
 
       $order->setStatut("WAITING");
@@ -134,17 +135,15 @@ class LandingPageController extends Controller
    */
   public function payment(Request $request)
   {
-
     $apiId = $request->query->get('id');
     $repository = $this->getDoctrine()->getRepository(Orders::class);
     $order = $repository->findOneBy(['orderApiId' => $apiId]);
 
+    ///////////////STRIPE///////////////////////
+
     //get Stripe token
     $tokenStripe = $request->query->get('stripeToken');
 
-
-
-    ///////////////STRIPE///////////////////////
     //Create customer in stripe
     \Stripe\Stripe::setApiKey('sk_test_DgvPJmAQjodeTkrNKaWvdqGq005l2TAOTD');
 
@@ -162,6 +161,16 @@ class LandingPageController extends Controller
       "customer" => $customer->id,
     ]);
 
+    $order->setStatut('PAID');
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->persist($order);
+    $entityManager->flush();
+
+
+    ///////////////END STRIPE///////////////////////
+
+
+    // updating the order status
     $client = new Client([
       // Base URI is used with relative requests
       'base_uri' => 'https://api-commerce.simplon-roanne.com/',
@@ -171,26 +180,59 @@ class LandingPageController extends Controller
 
     ]);
 
-    $response = $client->request('POST', '/order/'. $apiId .'/status', [
+    $response = $client->request('POST', '/order/' . $apiId . '/status', [
       'json' => [
-        [
-          "status" => "PAID"
-        ]
+        "status" => $order->getStatut(),
       ]
 
     ]);
 
-    dd($response->getBody()->getContents());
+
+    //get the response and convert the json array into an php array
+    $json_source = $response->getBody()->getContents();
+    $json_data = json_decode($json_source, true);
+    $status = $json_data['success'];
 
 
-    return $this->render('landing_page/confirmation.html.twig', []);
+    //set the new status and flush the objet $order into the data base
+    $order->setStatut($status);
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->flush();
+
+    return $this->redirectToRoute('confirmation', [
+      'id'=>$order->getId(),
+    ]);
   }
 
   /**
    * @Route("/confirmation", name="confirmation")
    */
-  public function confirmation()
+  public function confirmation(Request $request, \Swift_Mailer $mailer)
   {
+    //get the order id and sellect all the info in the data base
+    $id = $request->query->get('id');
+    $repository = $this->getDoctrine()->getRepository(Orders::class);
+    $order = $repository->findOneBy(['id' => $id]);
+
+  
+
+    //create the email with all the variables about the customer
+    $message = (new \Swift_Message('Hello Email'))
+      ->setFrom('battleoffice@example.com')
+      ->setTo($order->getClient()->getEmail())
+      ->setBody(
+        $this->renderView(
+          'emails/confirmation.html.twig',
+          ['name' => $order->getClient()->getFirstname(),
+          'product'=>$order->getProduct()]
+        ),
+        'text/html'
+      );
+
+
+    
+    $mailer->send($message);
+
     return $this->render('landing_page/confirmation.html.twig', []);
   }
 }
