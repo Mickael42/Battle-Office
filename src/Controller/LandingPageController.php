@@ -117,7 +117,10 @@ class LandingPageController extends Controller
               ]
             ]
           ]
-        ]
+        ],
+      'headers' => [
+        'User-Agent' => 'micka',
+    ]
       ]);
 
       //get the response and convert the json array into an php array
@@ -196,8 +199,10 @@ class LandingPageController extends Controller
     $response = $client->request('POST', '/order/' . $apiId . '/status', [
       'json' => [
         "status" => $order->getStatut(),
-      ]
-
+      ],
+      'headers' => [
+        'User-Agent' => 'micka',
+    ]
     ]);
 
 
