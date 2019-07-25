@@ -47,8 +47,21 @@ class LandingPageController extends Controller
       $idProduct = $request->get('product');
       $repository = $this->getDoctrine()->getRepository(Product::class);
       $product = $repository->findOneBy(['id' => $idProduct]);
+     
       $order->setProduct($product);
       $order->setAmmount($product->getReducePrice());
+
+
+
+
+      if  (isset($request->get('order')['addressOrder']) || isset($request->get('order')['addressComplementOrder']) || isset($request->get('order')['cityOrder']) || isset($request->get('order')['zipCodeOrder']) || isset($request->get('order')['countryOrder']) ){
+
+        $order->setAddressOrder($order->getClient()->getAddress());
+        $order->setAddressComplementOrder($order->getClient()->getAddressComplement());
+        $order->setCityOrder($order->getClient()->getCity());
+        $order->setZipCodeOrder($order->getClient()->getZipCode());
+        $order->setCountryOrder($order->getClient()->getCountry());
+      }
 
       //set the payement method and the statut
 
@@ -88,7 +101,7 @@ class LandingPageController extends Controller
             "addresses" => [
               "billing" => [
                 "address_line1" => $order->getClient()->getAddress(),
-                "address_line2" => $order->getClient()->getAddress(),
+                "address_line2" => $order->getClient()->getAddressComplement(),
                 "city" => $order->getClient()->getCity(),
                 "zipcode" => $order->getClient()->getZipCode(),
                 "country" => $order->getClient()->getCountry(),
@@ -96,7 +109,7 @@ class LandingPageController extends Controller
               ],
               "shipping" => [
                 "address_line1" => $order->getClient()->getAddress(),
-                "address_line2" => $order->getClient()->getAddress(),
+                "address_line2" => $order->getClient()->getAddressComplement(),
                 "city" => $order->getClient()->getCity(),
                 "zipcode" => $order->getClient()->getZipCode(),
                 "country" => $order->getClient()->getCountry(),
