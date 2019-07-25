@@ -21,7 +21,7 @@ class ClientFormType extends AbstractType
             ->add('phone', TextType::class)
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
-                'invalid_message' => 'The Email fields must match.',
+                'invalid_message' => 'les champs d\'e-mail doivent correspondre.',
                 'required' => true,
                 'first_options' => ['label' => 'Email'],
                 'second_options' => ['label' => 'Confirmation email'],
