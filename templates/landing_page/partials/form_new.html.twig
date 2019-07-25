@@ -61,7 +61,7 @@
                 {{ form_errors(form.client.country) }}
                 {{ form_widget(form.client.country) }}
                 {{ form_label(form.client.country, 'Pays') }}
-                {# {{form_row (form.client.country)}} #}
+
                 <div class="form-error"></div>
             </select>
             </div>
@@ -69,13 +69,13 @@
                 {{ form_label(form.client.phone, 'Téléphone') }}
                 {{ form_errors(form.client.phone) }}
                 {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
-                {# {{form_row (form.client.phone, {attr :{min : '0' , maxlength: "10" }})}} #}
+
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
                 {{ form_errors(form.client.email) }}
                 {{ form_widget(form.client.email) }}
-                {# {{form_row (form.client.email)}} #}
+
                 <div class="form-error"></div>
             </div>
             <div class="input-field">
