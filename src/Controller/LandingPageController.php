@@ -134,17 +134,15 @@ class LandingPageController extends Controller
    */
   public function payment(Request $request)
   {
-
     $apiId = $request->query->get('id');
     $repository = $this->getDoctrine()->getRepository(Orders::class);
     $order = $repository->findOneBy(['orderApiId' => $apiId]);
 
+    ///////////////STRIPE///////////////////////
+
     //get Stripe token
     $tokenStripe = $request->query->get('stripeToken');
 
-
-
-    ///////////////STRIPE///////////////////////
     //Create customer in stripe
     \Stripe\Stripe::setApiKey('sk_test_DgvPJmAQjodeTkrNKaWvdqGq005l2TAOTD');
 
@@ -162,6 +160,16 @@ class LandingPageController extends Controller
       "customer" => $customer->id,
     ]);
 
+    $order->setStatut('PAID');
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->persist($order);
+    $entityManager->flush();
+
+
+    ///////////////END STRIPE///////////////////////
+
+
+    // updating the order status
     $client = new Client([
       // Base URI is used with relative requests
       'base_uri' => 'https://api-commerce.simplon-roanne.com/',
@@ -171,17 +179,24 @@ class LandingPageController extends Controller
 
     ]);
 
-    $response = $client->request('POST', '/order/'. $apiId .'/status', [
+    $response = $client->request('POST', '/order/' . $apiId . '/status', [
       'json' => [
-        [
-          "status" => "PAID"
-        ]
+        "status" => $order->getStatut(),
       ]
 
     ]);
 
-    dd($response->getBody()->getContents());
 
+    //get the response and convert the json array into an php array
+    $json_source = $response->getBody()->getContents();
+    $json_data = json_decode($json_source, true);
+    $status = $json_data['success'];
+
+
+    //set the new status and flush the objet $order into the data base
+    $order->setStatut($status);
+    $entityManager = $this->getDoctrine()->getManager();
+    $entityManager->flush();
 
     return $this->render('landing_page/confirmation.html.twig', []);
   }
@@ -191,6 +206,8 @@ class LandingPageController extends Controller
    */
   public function confirmation()
   {
+
+    
     return $this->render('landing_page/confirmation.html.twig', []);
   }
 }
