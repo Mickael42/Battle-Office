@@ -77,20 +77,23 @@
                 <div class="form-error">
                     {{ form_errors(form.client.phone) }}
                 </div>
-                {{ form_label(form.client.phone, 'Téléphone') }}
                 {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
+                {{ form_label(form.client.phone, 'Téléphone') }}
             </div>
             <div class="input-field">
-                {{ form_widget(form.client.email) }}
                 <div class="form-error">
-                    {{ form_errors(form.client.email) }}
+                    {{ form_errors(form.client.email.first) }}
                 </div>
+                {{ form_label(form.client.email.first, 'Email') }}
+                {{ form_widget(form.client.email.first) }}
             </div>
             <div class="input-field">
-                {{ form_widget(form.client.email) }}
+                
                 <div class="form-error">
-                    {{ form_errors(form.client.email) }}
+                    {{ form_errors(form.client.email.second) }}
                 </div>
+                {{ form_label(form.client.email.second, 'Confirmation email') }}
+                {{ form_widget(form.client.email.second) }} 
             </div>
         </div>
     </div>
