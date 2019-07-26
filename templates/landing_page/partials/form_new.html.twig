@@ -16,55 +16,69 @@
         <p class="h6 center-align">Remplissez ce formulaire</p>
         <div class="form-wrapper">
             <div class="input-field">
+                
+                <div class="form-error">
+                    {{ form_errors(form.client.firstname) }}
+                </div>
                 {{ form_label(form.client.firstname, 'Prénom') }}
-                {{ form_errors(form.client.firstname) }}
                 {{ form_widget(form.client.firstname, {attr :{min : '2'}}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
-                {{ form_label(form.client.lastname, 'Nom') }}
-                {{ form_errors(form.client.lastname) }}
+                <div class="form-error">
+                    {{ form_errors(form.client.lastname) }}
+                </div>            
                 {{ form_widget(form.client.lastname, {attr :{min : '2'}}) }}
-                <div class="form-error"></div>
+                {{ form_label(form.client.lastname, 'Nom') }}                
             </div>
+            
             <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.client.address) }}
+                </div>
                 {{ form_label(form.client.address, 'Adresse') }}
-                {{ form_errors(form.client.address) }}
                 {{ form_widget(form.client.address, {attr :{min : '2' , maxlength: "50" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.client.addressComplement) }}
+                </div>
                 {{ form_label(form.client.addressComplement, 'Complément d\'adresse') }}
-                {{ form_errors(form.client.addressComplement) }}
                 {{ form_widget(form.client.addressComplement, {attr :{min : '2' , maxlength: "30" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
-                {{ form_label(form.client.city, 'Ville') }}
-                {{ form_errors(form.client.city) }}
+                <div class="form-error">
+                    {{ form_errors(form.client.city) }}
+                </div>
+                {{ form_label(form.client.city, 'Ville') }}                
                 {{ form_widget(form.client.city ,{attr :{min : '2' , maxlength: "30" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.client.zipCode) }}
+                </div>
                 {{ form_label(form.client.zipCode, 'Code postale') }}
-                {{ form_errors(form.client.zipCode) }}
                 {{ form_widget(form.client.zipCode, {attr :{min : '1' , maxlength: "5" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
-                {{ form_errors(form.client.country) }}
+                <div class="form-error">
+                    {{ form_errors(form.client.country) }}
+                </div>
                 {{ form_widget(form.client.country) }}
                 {{ form_label(form.client.country, 'Pays') }}
-
-                <div class="form-error"></div>
             </select>
             </div>
-            <div class="input-field">
-                {{ form_label(form.client.phone, 'Téléphone') }}
-                {{ form_errors(form.client.phone) }}
-                {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
 
-                <div class="form-error"></div>
+            <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.client.phone) }}
+                </div>
+                {{ form_label(form.client.phone, 'Téléphone') }}
+                {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
             </div>
             <div class="input-field">
                 {{ form_widget(form.client.email) }}
@@ -85,50 +99,65 @@
             <div class="collapsible-header">
                 <i class="material-icons">markunread_mailbox</i>Adresse de livraison différente ?</div>
             <div class="collapsible-body">
+            
                 <div class="input-field">
-                    <input type="text">
+                    <div class="form-error">
                     <label>Prénom</label>
-                    <div class="form-error"></div>
-                </div>
-                <div class="input-field">
                     <input type="text">
-                    <label>Nom</label>
-                    <div class="form-error"></div>
+                    </div>
                 </div>
+                
                 <div class="input-field">
-                {{ form_label(form.addressOrder, 'Adresse') }}
-                {{ form_errors(form.addressOrder) }}
-                {{ form_widget(form.addressOrder, {attr :{min : '2' , maxlength: "50" }}) }}
-                    <div class="form-error"></div>
+                    <div class="form-error">
+                    <label>Nom</label>                
+                    <input type="text">
+                    </div>
                 </div>
+                
                 <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.addressOrder) }}
+                </div>
+                {{ form_label(form.addressOrder, 'Adresse') }}           
+                {{ form_widget(form.addressOrder, {attr :{min : '2' , maxlength: "50" }}) }}                   
+                </div>
+
+                <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.addressComplementOrder) }}
+                </div>
                 {{ form_label(form.addressComplementOrder, 'Complément d\'adresse') }}
-                {{ form_errors(form.addressComplementOrder) }}
                 {{ form_widget(form.addressComplementOrder, {attr :{min : '2' , maxlength: "30" }}) }}
-                <div class="form-error"></div>
             </div>
+            
             <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.cityOrder) }}
+                </div>
                 {{ form_label(form.cityOrder, 'Ville') }}
-                {{ form_errors(form.cityOrder) }}
                 {{ form_widget(form.cityOrder, {attr :{min : '2' , maxlength: "30" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
+                <div class="form-error">
+                    {{ form_errors(form.zipCodeOrder) }}
+                </div>
                 {{ form_label(form.zipCodeOrder, 'Code postale') }}
-                {{ form_errors(form.zipCodeOrder) }}
                 {{ form_widget(form.zipCodeOrder, {attr :{min : '0' , maxlength: "5" }}) }}
-                <div class="form-error"></div>
             </div>
+
             <div class="input-field">
-                {{ form_errors(form.countryOrder) }}
+                <div class="form-error">
+                    {{ form_errors(form.countryOrder) }}
+                </div>
                 {{ form_widget(form.countryOrder) }}
-                {{ form_label(form.countryOrder, 'pays') }}
-                <div class="form-error"></div>
+                {{ form_label(form.countryOrder, 'pays') }}   
             </div>
             <div class="input-field">
+            <div class="form-error">
+            <label>Téléphone</label>
                 <input type="text"name="Téléphone" maxlength="10" size="10">
-                <label>Téléphone</label>
-                <div class="form-error"></div>
+                </div>
             </div>
         </div>
     </li>

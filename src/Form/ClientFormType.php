@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class ClientFormType extends AbstractType
 {
@@ -18,7 +19,7 @@ class ClientFormType extends AbstractType
         $builder
             ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
-            ->add('phone', TextType::class)
+            ->add('phone', NumberType::class)
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
                 'invalid_message' => 'les champs d\'e-mail doivent correspondre.',
@@ -29,7 +30,7 @@ class ClientFormType extends AbstractType
             ->add('address')
             ->add('addressComplement')
             ->add('city')
-            ->add('zipCode', TextType::class)
+            ->add('zipCode', NumberType::class)
             ->add('country', ChoiceType::class, [
                 'choices' => [
                     'France' => 'france',
