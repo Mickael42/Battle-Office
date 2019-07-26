@@ -16,7 +16,7 @@
         <p class="h6 center-align">Remplissez ce formulaire</p>
         <div class="form-wrapper">
             <div class="input-field">
-                
+
                 <div class="form-error">
                     {{ form_errors(form.client.firstname) }}
                 </div>
@@ -27,11 +27,11 @@
             <div class="input-field">
                 <div class="form-error">
                     {{ form_errors(form.client.lastname) }}
-                </div>            
+                </div>
                 {{ form_widget(form.client.lastname, {attr :{min : '2'}}) }}
-                {{ form_label(form.client.lastname, 'Nom') }}                
+                {{ form_label(form.client.lastname, 'Nom') }}
             </div>
-            
+
             <div class="input-field">
                 <div class="form-error">
                     {{ form_errors(form.client.address) }}
@@ -129,7 +129,7 @@
                 {{ form_label(form.addressComplementOrder, 'Complément d\'adresse') }}
                 {{ form_widget(form.addressComplementOrder, {attr :{min : '2' , maxlength: "30" }}) }}
             </div>
-            
+
             <div class="input-field">
                 <div class="form-error">
                     {{ form_errors(form.cityOrder) }}
@@ -151,7 +151,7 @@
                     {{ form_errors(form.countryOrder) }}
                 </div>
                 {{ form_widget(form.countryOrder) }}
-                {{ form_label(form.countryOrder, 'pays') }}   
+                {{ form_label(form.countryOrder, 'pays') }}
             </div>
         </div>
     </li>
@@ -166,14 +166,15 @@
             <div class="collapsible-body card-form">
                 <div class="row">
                     <div class="center-align">
-{#                         <div id="card-element">
-                            <!-- A Stripe Element will be inserted here. -->
+                        <div id="stripeContainer">
+  {#                           <div
+                                id="card-element"><!-- A Stripe Element will be inserted here. -->
 
+                            </div>
+                            <div id="card-errors" role="alert"></div> #}
                         </div>
-                        <div id="card-errors" role="alert"></div> #}
 
-
-                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lpmonetico">Continuer</button>
+                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="stripe">Continuer</button>
                         <p>J'accepte les
                             <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
                         </p>
@@ -183,12 +184,12 @@
             </div>
         </li>
         <li>
-            <div class="collapsible-header">
+            <div class="collapsible-header paypalAccordionTitle">
                 <i class="fab fa-cc-paypal"></i>Payer avec Paypal</div>
             <div class="collapsible-body">
                 <div class="row">
                     <div class="center-align">
-                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lppaypal">Continuer sur PayPal</button>
+                        <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="paypal">Continuer sur PayPal</button>
                         <p>J'accepte les
                             <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
                         </p>

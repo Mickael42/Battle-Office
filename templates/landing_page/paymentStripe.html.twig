@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% endblock %}
+
+{% block body %}
+    {#     <div class="container">
+                            <div class="row">
+                                <div class="content col s12 m12 l8">
+                                    <div class="card bg_grey">
+                                        <div class="card-content">
+                                            <div
+                                                id="card-element"><!-- A Stripe Element will be inserted here. -->
+                    
+                                            </div>
+                                            <div id="card-errors" role="alert"></div>
+                    
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> #}
+
+
+    <div class="card step_3">
+        <div class="card-content">
+            <span class="card-title color_product_primary center-align">Étape 3</span>
+            <p class="h6 center-align">Choisissez un paiement</p>
+            <div class="header">
+                <i class="fas fa-credit-card"></i>Payer avec la Carte Bancaire</div>
+
+            {% for message in app.flashes('error') %}
+                <div class="card-panel">
+                    <span class="red-text ">{{ message }}</span>
+                </div>
+            {% endfor %}
+            {#             <form action="{{path ('payment', {'id': id}) }}" method='post'>
+                        <div class="body card-form">
+                            <div class="row">
+                                <div class="center-align">
+                                    <div id="stripeContainer">
+                                        <div
+                                            id="card-element"><!-- A Stripe Element will be inserted here. -->
+            
+                                        </div>
+                                        <div id="card-errors" role="alert"></div>
+                                    </div>
+            
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        </form > #}
+
+            <form action="{{path ('payment', {'id' : id }) }}" method="post" id="form-order">
+                <div class="form-row">
+
+                    <div
+                        id="card-element" style="margin-top:10px"><!-- A Stripe Element will be inserted here. -->
+                    </div>
+
+                    <!-- Used to display form errors. -->
+                    <div id="card-errors" role="alert"></div>
+                </div>
+
+               <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="stripe" >Continuer</button>
+                                    <p>J'accepte les
+                                        <a href="https://feelwellshop.com/fr/conditions-generales-de-ventes" target="_blank">conditions générales de vente</a>
+                                    </p>
+                                    <img alt="Stripe protège vos achats" class="responsive-img monetico" src="{{ asset ('assets/images/paiement-securise-stripe.jpeg')}}">
+            </form>
+
+        </div>
+    </div>
+
+
+{% endblock %}
