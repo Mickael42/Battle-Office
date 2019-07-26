@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use Exception;
 use Stripe\Stripe;
 use Stripe\Customer;
 use App\Entity\Orders;
@@ -141,9 +142,9 @@ class LandingPageController extends Controller
     }
 
     return $this->render('landing_page/index_new.html.twig', [
-
       'form' => $form->createView(),
       'products' => $products,
+      
     ]);
   }
   /**
@@ -169,13 +170,19 @@ class LandingPageController extends Controller
       "source" => $tokenStripe,
     ]));
 
-
-    $charge = \Stripe\Charge::create([
-      'amount' => $order->getAmmount() * 100,
-      'currency' => 'eur',
-      'receipt_email' => $order->getClient()->getEmail(),
-      "customer" => $customer->id,
-    ]);
+    try{
+      $charge = \Stripe\Charge::create([
+        'amount' => $order->getAmmount() * 100,
+        'currency' => 'eur',
+        'receipt_email' => $order->getClient()->getEmail(),
+        "customer" => $customer->id,
+      ]);
+      
+    } catch(Exception $e){
+      $this->addFlash('error', 'Il y a une erreur liée à la carte de paiement, veuillez réessayer.');
+      return $this->redirectToRoute('landing_page', [
+      ]);
+  }
 
     $order->setStatut('PAID');
     $entityManager = $this->getDoctrine()->getManager();
