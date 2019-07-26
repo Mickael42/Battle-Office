@@ -31,10 +31,20 @@
             </div>
         </div>
     </section>
+
+
     {{ form_start(form, {'attr': {'id': 'form-order'}}) }}
     <div class="container">
         <div class="row">
             <div class="content col s12 m12 l8">
+
+
+                {% for message in app.flashes('error') %}
+                    <div class="card-panel">
+                        <span class="red-text ">{{ message }}</span>
+                    </div>
+                {% endfor %}
+
 
                 <section class="formulas">
                     <div class="card bg_grey">
@@ -56,7 +66,7 @@
                                             {% if product.id == 2 %}
                                                 <div class="promo">Offre la plus populaire !</div>
                                             {% endif %}
-                                            
+
                                             <div class="image-content">
                                                 <img alt="10 Nerf Elite Jolt© + 2 offerts" class="responsive-img" src="assets/images/nerf{{product.id}}.jpg">
                                             </div>
@@ -150,11 +160,11 @@
                                     <b>Soyez tactiques :</b>
                                     <p>
                                         Il est possible de tenter de créer des situations qu’on pense qui ne seront pas en faveur de notre adversaire. Par exemple,
-                                                                                                                                
-                                                                                                                                                                            Prendre une garde gauche ou droite;
-                                                                                                                                                                            Effectuer des déplacements qui seront déstabilisants pour l’adversaire;
-                                                                                                                                                                            Utiliser un rythme qui désavantage l’adversaire selon son style de combattant;
-                                                                                                                                                                            Intimider l’adversaire par son attitude ou son regard.
+                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                Prendre une garde gauche ou droite;
+                                                                                                                                                                                                                                                                                                                                                Effectuer des déplacements qui seront déstabilisants pour l’adversaire;
+                                                                                                                                                                                                                                                                                                                                                Utiliser un rythme qui désavantage l’adversaire selon son style de combattant;
+                                                                                                                                                                                                                                                                                                                                                Intimider l’adversaire par son attitude ou son regard.
 
                                     </p>
                                 </div>
