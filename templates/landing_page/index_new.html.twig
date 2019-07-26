@@ -55,9 +55,14 @@
                     </div>
 
                     {% for product in products %}
-                    
+
                         <label class="cure-radio">
-                            <input name="product" type="radio" value="{{product.id}}" required>
+                            {% if product.id == 2 %}
+                                <input name="product" type="radio" value="{{product.id}}" required checked>
+                            {% else %}
+                                <input name="product" type="radio" value="{{product.id}}" required>
+                            {% endif %}
+
                             <article>
                                 <div class="card center-align">
                                     <div class="row">
@@ -160,11 +165,11 @@
                                     <b>Soyez tactiques :</b>
                                     <p>
                                         Il est possible de tenter de créer des situations qu’on pense qui ne seront pas en faveur de notre adversaire. Par exemple,
-                                                                                                                                                                                                                                                                                                    
-                                                                                                                                                                                                                                                                                                                                                Prendre une garde gauche ou droite;
-                                                                                                                                                                                                                                                                                                                                                Effectuer des déplacements qui seront déstabilisants pour l’adversaire;
-                                                                                                                                                                                                                                                                                                                                                Utiliser un rythme qui désavantage l’adversaire selon son style de combattant;
-                                                                                                                                                                                                                                                                                                                                                Intimider l’adversaire par son attitude ou son regard.
+                                                                                                                                                                                                                                                                                                                                                                                    
+                                                                                                                                                                                                                                                                                                                                                                                                                                Prendre une garde gauche ou droite;
+                                                                                                                                                                                                                                                                                                                                                                                                                                Effectuer des déplacements qui seront déstabilisants pour l’adversaire;
+                                                                                                                                                                                                                                                                                                                                                                                                                                Utiliser un rythme qui désavantage l’adversaire selon son style de combattant;
+                                                                                                                                                                                                                                                                                                                                                                                                                                Intimider l’adversaire par son attitude ou son regard.
 
                                     </p>
                                 </div>

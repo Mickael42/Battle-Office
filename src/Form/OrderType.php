@@ -8,6 +8,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 
 class OrderType extends AbstractType
 {
@@ -17,7 +18,7 @@ class OrderType extends AbstractType
             ->add('addressOrder', null, ['required' => false])
             ->add('addressComplementOrder', null, ['required' => false])
             ->add('cityOrder', null, ['required' => false])
-            ->add('zipCodeOrder', TextType::class, ['required' => false])
+            ->add('zipCodeOrder', NumberType::class, ['required' => false])
             ->add('countryOrder', ChoiceType::class, [
                 'choices' => [
                     'France' => 'france',

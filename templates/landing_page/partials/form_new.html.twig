@@ -80,13 +80,13 @@
                 {{ form_label(form.client.phone, 'Téléphone') }}
                 {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
             </div>
-            <div class="input-field">
+            <div class="input-field" style="color: red">
                 {{ form_widget(form.client.email) }}
                 <div class="form-error">
                     {{ form_errors(form.client.email) }}
                 </div>
             </div>
-            <div class="input-field">
+            <div class="input-field" style="color: red">
                 {{ form_widget(form.client.email) }}
                 <div class="form-error">
                     {{ form_errors(form.client.email) }}
@@ -153,12 +153,6 @@
                 {{ form_widget(form.countryOrder) }}
                 {{ form_label(form.countryOrder, 'pays') }}   
             </div>
-            <div class="input-field">
-            <div class="form-error">
-            <label>Téléphone</label>
-                <input type="text"name="Téléphone" maxlength="10" size="10">
-                </div>
-            </div>
         </div>
     </li>
 </ul></div>{# Etape 3 #}<div class="card step_3">
@@ -172,12 +166,11 @@
             <div class="collapsible-body card-form">
                 <div class="row">
                     <div class="center-align">
-                        <div
-                            id="card-element">
+{#                         <div id="card-element">
                             <!-- A Stripe Element will be inserted here. -->
 
                         </div>
-                        <div id="card-errors" role="alert"></div>
+                        <div id="card-errors" role="alert"></div> #}
 
 
                         <button class="btn-large btn-block waves-effect waves-light" name="order[payment_method]" type="submit" value="lpmonetico">Continuer</button>

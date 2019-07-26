@@ -19,7 +19,7 @@ class ClientFormType extends AbstractType
         $builder
             ->add('firstname', TextType::class)
             ->add('lastname', TextType::class)
-            ->add('phone', NumberType::class)
+            ->add('phone', TextType::class)
             ->add('email', RepeatedType::class, [
                 'type' => EmailType::class,
                 'invalid_message' => 'les champs d\'e-mail doivent correspondre.',

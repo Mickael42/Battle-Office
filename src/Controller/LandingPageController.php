@@ -42,7 +42,8 @@ class LandingPageController extends Controller
 
     $form->handleRequest($request);
 
-    if ($form->isSubmitted() && $form->isValid()) {
+    if ($form->isSubmitted() && $form->isValid() ) {
+      dd($request);
 
       //get the product choosen by the client and set all infos about the product in the order class
       $idProduct = $request->get('product');
