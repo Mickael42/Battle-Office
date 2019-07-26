@@ -16,7 +16,10 @@
         <p class="h6 center-align">Remplissez ce formulaire</p>
         <div class="form-wrapper">
             <div class="input-field">
+<<<<<<< HEAD
 
+=======
+>>>>>>> f6abecc59a0a084362a02ba0d3e76ace85fc1bb2
                 <div class="form-error">
                     {{ form_errors(form.client.firstname) }}
                 </div>
@@ -77,20 +80,23 @@
                 <div class="form-error">
                     {{ form_errors(form.client.phone) }}
                 </div>
-                {{ form_label(form.client.phone, 'Téléphone') }}
                 {{ form_widget(form.client.phone, {attr :{min : '0' , maxlength: "10" }}) }}
+                {{ form_label(form.client.phone, 'Téléphone') }}
             </div>
-            <div class="input-field" style="color: red">
-                {{ form_widget(form.client.email) }}
+            <div class="input-field">
                 <div class="form-error">
-                    {{ form_errors(form.client.email) }}
+                    {{ form_errors(form.client.email.first) }}
                 </div>
+                {{ form_label(form.client.email.first, 'Email') }}
+                {{ form_widget(form.client.email.first) }}
             </div>
-            <div class="input-field" style="color: red">
-                {{ form_widget(form.client.email) }}
+            <div class="input-field">
+                
                 <div class="form-error">
-                    {{ form_errors(form.client.email) }}
+                    {{ form_errors(form.client.email.second) }}
                 </div>
+                {{ form_label(form.client.email.second, 'Confirmation email') }}
+                {{ form_widget(form.client.email.second) }} 
             </div>
         </div>
     </div>
